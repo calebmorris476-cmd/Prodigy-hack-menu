@@ -201,7 +201,7 @@
 
     // Button 6.5: Set Gold
     createDemoButton('Set Gold', function() {
-        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Set%20Gold%20Script";
+        const scriptUrl = "https://raw.githubusercontent.com/Byrrrd/The-ultimate-prodigy-hacks/refs/heads/main/get%20gold.js";
         fetch(scriptUrl)
             .then(response => response.text())
             .then(code => {
