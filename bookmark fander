@@ -1,0 +1,424 @@
+(function() {
+    // Create the dropdown button
+    var dropdownButton = document.createElement('button');
+    dropdownButton.id = 'dropdownButton';
+    dropdownButton.innerText = 'Open Menu';
+    dropdownButton.style.position = 'absolute';
+    dropdownButton.style.top = '10px';
+    dropdownButton.style.left = '10px';
+    dropdownButton.style.padding = '10px';
+    dropdownButton.style.backgroundColor = '#333';
+    dropdownButton.style.color = 'white';
+    dropdownButton.style.border = 'none';
+    dropdownButton.style.cursor = 'pointer';
+    document.body.appendChild(dropdownButton);
+
+    // Create the menu overlay
+    var menuOverlay = document.createElement('div');
+    menuOverlay.id = 'menuOverlay';
+    menuOverlay.style.display = 'none';
+    menuOverlay.style.position = 'fixed';
+    menuOverlay.style.top = '0';
+    menuOverlay.style.left = '0';
+    menuOverlay.style.width = '100%';
+    menuOverlay.style.height = '100%';
+    menuOverlay.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+    menuOverlay.style.zIndex = '1000';
+    menuOverlay.style.padding = '20px';
+    menuOverlay.style.boxSizing = 'border-box';
+    menuOverlay.style.overflowY = 'auto'; // Enable vertical scrolling
+    document.body.appendChild(menuOverlay);
+
+    // Create the back arrow
+    var backButton = document.createElement('button');
+    backButton.innerText = '←';
+    backButton.style.position = 'absolute';
+    backButton.style.top = '10px';
+    backButton.style.left = '10px';
+    backButton.style.padding = '10px';
+    backButton.style.backgroundColor = '#333';
+    backButton.style.color = 'white';
+    backButton.style.border = 'none';
+    backButton.style.cursor = 'pointer';
+    backButton.style.display = 'none';
+    backButton.onclick = function() {
+        menuOverlay.style.display = 'none';
+        dropdownButton.style.display = 'block';
+    };
+    menuOverlay.appendChild(backButton);
+
+    // Create the close (X) button
+    var closeButton = document.createElement('button');
+    closeButton.innerText = 'X';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '10px';
+    closeButton.style.right = '10px';
+    closeButton.style.padding = '10px';
+    closeButton.style.backgroundColor = '#333';
+    closeButton.style.color = 'white';
+    closeButton.style.border = 'none';
+    closeButton.style.cursor = 'pointer';
+    closeButton.onclick = function() {
+        menuOverlay.remove();
+        dropdownButton.remove();
+    };
+    menuOverlay.appendChild(closeButton);
+
+    // Create the main header
+    var mainHeader = document.createElement('h1');
+    mainHeader.innerText = 'CrackinPMG Hack Menu V1 Alpha';
+    mainHeader.style.textAlign = 'center';
+    mainHeader.style.color = '#333';
+    mainHeader.style.fontSize = '42px'; // Slightly larger font size
+    mainHeader.style.marginTop = '50px';
+    menuOverlay.appendChild(mainHeader);
+
+    // Function to create headers
+    function createHeader(text) {
+        var header = document.createElement('h2');
+        header.innerText = text;
+        header.style.margin = '30px 0 10px 0';
+        header.style.color = '#333';
+        menuOverlay.appendChild(header);
+    }
+
+    // Function to create demo buttons
+    function createDemoButton(text, action) {
+        var button = document.createElement('button');
+        button.innerText = text;
+        button.style.display = 'inline-block';
+        button.style.width = '22%'; // Adjusted width
+        button.style.marginRight = '2%'; // Adjusted margin
+        button.style.padding = '18px';
+        button.style.marginTop = '12px';
+        button.style.backgroundColor = '#444';
+        button.style.color = 'white';
+        button.style.border = 'none';
+        button.style.cursor = 'pointer';
+        button.style.textAlign = 'center';
+        button.style.fontSize = '12px';
+        button.onmouseover = function() {
+            button.style.backgroundColor = '#555';
+        };
+        button.onmouseout = function() {
+            button.style.backgroundColor = '#444';
+        };
+        button.onclick = action;
+        menuOverlay.appendChild(button);
+        return button; // Return the button to allow styling adjustments
+    }
+
+    // Create the headers and buttons
+    createHeader('UI Hacks');
+    
+    // Button 1: Epics
+    createDemoButton('Epics', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Mythical%20Epics%20Script";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+    
+    // Button 2: Change Name
+    createDemoButton('Change Name', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Name%20And%20Nickname%20Changer%20Script";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    // Button 3: Pet Selector
+    createDemoButton('Pet Selector', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Pet%20Selector%20475%20Script";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    // Button 4: Item Management
+    createDemoButton('Item Management', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Item%20Management%20Script";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    // Button 5: Basic Player Teleporter
+    createDemoButton('Basic Player Teleporter', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/BASIC%20Player%20Teleporter%20Script";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    // Button 6: Mount Selector UI
+    createDemoButton('Mount Selector', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Mount%20Selector%20Script";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    createDemoButton('Change Appearance', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Player%20Appearance%20UI";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    createDemoButton('Item Selector', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Advanced%20Item%20Selector";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    createHeader('Player Hacks');
+
+    // Button 6.5: Set Gold
+    createDemoButton('Set Gold', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Set%20Gold%20Script";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    
+    // Button 7: Set Tower
+    createDemoButton('Set Tower', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Set%20Tower%20Level";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    // Button 8: Temporary Membership
+    createDemoButton('Temporary Membership', function() { 
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Temporary%20Membership%20Script";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));    
+    });
+
+
+    // Button 9: Set Level
+    createDemoButton('Set Level', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Set%20Player%20Level";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));    
+    });
+
+    createDemoButton('All Furniture', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Unlock%20All%20Furniture";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));    
+    });
+
+    // Button 10: Set Bounty
+    createDemoButton('Set Bounty', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Set%20Bounty";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));    
+    });
+
+
+    // Button 11: Set Grade
+    createDemoButton('Set Grade', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Set%20Grade";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));    
+    });
+
+
+    // Button 12: Set Member Stars
+    createDemoButton('Set Member Stars', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Set%20Member%20Stars";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+
+
+    createDemoButton('Unlimited Spins', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Unlimited%20Spins";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    createDemoButton('Set Walkspeed', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Set%20Walk%20Speed";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    createDemoButton('Remove Players From Screen', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Remove%20Current%20Players%20From%20Screen";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    createDemoButton('Set Player Scale', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Set%20Player%20Scale";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+    
+    createDemoButton('Get All Gems', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Get%20All%20Gems";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+    
+    createHeader('Battle Hacks');
+    createDemoButton('Exit Battle', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Exit%20Battle";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+    createDemoButton('Log Message', function() { 
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Battle%20Message%20Log";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    createDemoButton('Zoom Level', function() { 
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Battle%20Zoom";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    createHeader('Minigames');
+    createDemoButton('Dyno Dig Oasis', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Dyno%20Dig%20Oasis%20Script";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+    
+    createDemoButton('TEK-Y4', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/TEK-Y4%20Script";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    createHeader('Other Tools and Features');
+    createDemoButton('Remove In-game UI', function() {
+        const scriptUrl = "https://raw.githubusercontent.com/CrackinPMG2024/HackMenu/main/Remove%20in-game%20UI";
+        fetch(scriptUrl)
+            .then(response => response.text())
+            .then(code => {
+                eval(code);
+            })
+            .catch(error => console.error("Failed to load the script:", error));
+    });
+
+    createHeader('Socials');
+    // Button 13: YouTube Channel
+    createDemoButton('YouTube Channel', function() {
+        window.open('https://www.youtube.com/@CrackinPMG', '_blank');
+    });
+    
+    // Button 14: Discord Server
+    createDemoButton('Discord Server', function() {
+        window.open('https://discord.gg/KXDrcZQV6R', '_blank');
+    });
+
+    // Open menu functionality
+    dropdownButton.onclick = function() {
+        menuOverlay.style.display = 'block';
+        dropdownButton.style.display = 'none';
+        backButton.style.display = 'block'; // Show back button when menu is open
+    };
+})();
